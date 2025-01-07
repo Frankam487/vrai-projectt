@@ -6,7 +6,7 @@ const Classiques = () => {
       <div className="bg-white p-6 rounded-lg shadow-xl max-w-4xl w-full">
         <div className="flex justify-center mb-6">
           <img
-            src="./box-men.jpg"
+            src="./box-men.jpgo"
             alt="Box Braids Classiques"
             className="w-full sm:w-auto h-94 object-cover object-center rounded-lg shadow-lg"
           />
