@@ -4,10 +4,10 @@ const Courtes = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
-        {/* Section Image */}
+
         <div className="flex justify-center mb-6">
           <img
-            src="../../public/courte.jpg"
+            src="./courte.jpg"
             alt="Box Braids Longues"
             className="w-full h-96 object-cover rounded-lg shadow-xl"
           />
