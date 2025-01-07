@@ -8,7 +8,7 @@ const Contact = () => {
       <header
         className="text-center py-20 bg-cover bg-center bg-blur-sm"
         style={{
-          backgroundImage: 'url("../../public/logo.jpg")',
+          backgroundImage: 'url("./logo.jpg")',
         }}
       >
         <motion.h1
@@ -29,7 +29,7 @@ const Contact = () => {
         </motion.p>
       </header>
 
-      {/* Informations de Contact */}
+
       <section className="max-w-6xl mx-auto px-4 py-12">
         <motion.div
           className="lg:flex lg:space-x-12"
@@ -37,7 +37,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          {/* Informations de Contact */}
+
           <div className="lg:w-1/2 mt-12 lg:mt-0">
             <motion.h2
               className="text-4xl font-semibold text-white"
@@ -67,7 +67,7 @@ const Contact = () => {
                 >
                   <svg
                     className="w-8 h-8 text-white"
-                    xmlns="../../public/tsmall.jpg"
+                    xmlns="./tsmall.jpg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -110,7 +110,7 @@ const Contact = () => {
 
           <div className="lg:w-1/2 mt-12 lg:mt-0">
             <motion.img
-              src="../../public/logo.jpg"
+              src="./logo.jpg"
               alt="spa"
               className="rounded-lg shadow-lg w-full h-full sm:w-auto h-94 object-cover object-center "
               initial={{ opacity: 0 }}

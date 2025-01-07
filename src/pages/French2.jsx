@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const French2 = () => {
   return (
     <CoiffureDetail
-      image="../../public/fss2.jpg"
+      image="./fss2.jpg"
       title="Fulani Medium"
       description="Les Fulani Medium sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

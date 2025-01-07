@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const French1 = () => {
   return (
     <CoiffureDetail
-      image="../../public/fss.jpg"
+      image="./fss.jpg"
       title="Fulani Small"
       description="Les Fulani Small sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[
