@@ -7,7 +7,7 @@ const Courtes = () => {
 
         <div className="flex justify-center mb-6">
           <img
-            src="./courte.jpg"
+            src="/courte.jpg"
             alt="Box Braids Longues"
             className="w-full h-96 object-cover rounded-lg shadow-xl"
           />
