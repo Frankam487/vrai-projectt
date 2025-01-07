@@ -3,8 +3,8 @@ import CoiffureDetail from '../components/CoiffureDetail';
 const TwistCourt = () => {
   return (
     <CoiffureDetail
-      image="../../public/tsmall.jpg"
-      title="Twists Small" 
+      image="./tsmall.jpg"
+      title="Twists Small"
       description="Les Twists Small sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[
         'Idéales pour un entretien facile',

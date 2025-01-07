@@ -3,8 +3,8 @@ import CoiffureDetail from '../components/CoiffureDetail';
 const TwistClassique = () => {
   return (
     <CoiffureDetail
-      image="../../public/pic3.jpg"
-      title="Twists Pré-étiré" // Titre
+      image="./pic3.jpg"
+      title="Twists Pré-étiré"
       description="Les Twists  sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[
         'Idéales pour un entretien facile',

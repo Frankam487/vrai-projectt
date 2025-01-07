@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Soft1 = () => {
   return (
     <CoiffureDetail
-      image="../../public/sSmall.jpg"
+      image="./sSmall.jpg"
       title="Locs Small"
       description="Les Locs Courtes sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

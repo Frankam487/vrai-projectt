@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Soft3 = () => {
   return (
     <CoiffureDetail
-      image="../../public/slarge.jpg"
+      image="./slarge.jpg"
       title="Locs Large"
       description="Les Locs Large sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

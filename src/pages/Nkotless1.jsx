@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Nkotless1 = () => {
   return (
     <CoiffureDetail
-      image="../../public/pic1.jpg"
+      image="./pic1.jpg"
       title="Nkotless Braids Medium"
       description="Les Nkotless Braids Medium sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Nkotless4 = () => {
   return (
     <CoiffureDetail
-      image="../../public/homme.jpg"
+      image="./homme.jpg"
       title="Nkotless Braids Pré-étirés"
       description="Les Twists Courtes sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

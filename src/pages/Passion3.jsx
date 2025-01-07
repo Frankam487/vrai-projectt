@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Passion3 = () => {
   return (
     <CoiffureDetail
-      image="../../public/fl.jpg"
+      image="./fl.jpg"
       title="Fulani Large"
       description="Les 'Fulani Large' sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

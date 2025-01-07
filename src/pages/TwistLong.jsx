@@ -3,8 +3,8 @@ import CoiffureDetail from '../components/CoiffureDetail';
 const TwistLong = () => {
   return (
     <CoiffureDetail
-      image="../../public/tlarge.jpg"
-      title="Twists Large" 
+      image="./tlarge.jpg"
+      title="Twists Large"
       description="Les Twists Large sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[
         'Idéales pour un entretien facile',

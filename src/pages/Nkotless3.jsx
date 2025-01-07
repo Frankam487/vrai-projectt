@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Nkotless1 = () => {
   return (
     <CoiffureDetail
-      image="../../public/klarge.jpg"
+      image="./klarge.jpg"
       title="Nkotless Braids Large"
       description="Les Nkotless Braids large sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

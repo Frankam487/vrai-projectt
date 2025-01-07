@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const TwistClassique = () => {
   return (
     <CoiffureDetail
-      image="../../public/tmedium.jpg"
+      image="./tmedium.jpg"
       title="Twists Medium"
       description="Les Twists Medium sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[

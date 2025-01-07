@@ -3,7 +3,7 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 const Passion1 = () => {
   return (
     <CoiffureDetail
-      image="../../public/homme.jpg"
+      image="./homme.jpg"
       title="Fulani Small"
       description="Les Fulani Courtes sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."
       features={[
