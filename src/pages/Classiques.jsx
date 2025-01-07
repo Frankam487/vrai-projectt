@@ -8,7 +8,7 @@ const Classiques = () => {
           <img
             src="./box-men.jpg"
             alt="Box Braids Classiques"
-            className="w-full  object-cover object-center rounded-lg shadow-lg"
+            className="w-full sm:w-auto h-94 object-cover object-center rounded-lg shadow-lg"
           />
         </div>
 
@@ -16,16 +16,17 @@ const Classiques = () => {
           Box Braids Men
         </h2>
         <p className="text-lg text-gray-600 text-center mb-8">
-          Les Box Braids men sont parfaites pour un look élégant et
-          naturel. Ces tresses sont idéales pour celles qui recherchent une
-          coiffure intemporelle et pratique. Elles sont faciles à entretenir et
-          peuvent durer plusieurs semaines.
+          Les Box Braids men sont parfaites pour un look élégant et naturel. Ces
+          tresses sont idéales pour celles qui recherchent une coiffure
+          intemporelle et pratique. Elles sont faciles à entretenir et peuvent
+          durer plusieurs semaines.
         </p>
 
         <div className="text-center">
           <NavLink
             to="/reserver"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all">
+            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all"
+          >
             Réserver maintenant
           </NavLink>
         </div>

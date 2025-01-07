@@ -4,15 +4,13 @@ const Courtes = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
-
         <div className="flex justify-center mb-6">
           <img
             src="/courte.jpg"
             alt="Box Braids Longues"
-            className="w-full h-96 object-cover rounded-lg shadow-xl"
+            className="w-full sm:w-auto h-94 object-cover object-center rounded-lg shadow-lg"
           />
         </div>
-
 
         <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-4">
           Box Braids Small
@@ -29,7 +27,8 @@ const Courtes = () => {
         <div className="text-center mb-8">
           <NavLink
             to="/reserver" // Remplace par la route vers la réservation ou la page souhaitée
-            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all">
+            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all"
+          >
             Réserver maintenant
           </NavLink>
         </div>
