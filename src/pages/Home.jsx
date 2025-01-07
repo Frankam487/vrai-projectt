@@ -72,7 +72,6 @@ const Home = () => {
             <motion.li
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              
               transition={{ duration: 1, delay: 0.7 }}>
               Il est fortement conseillé d'acheter les mèches auprès de nous,
               afin que nous puissions les préparer et ainsi gagner du temps.
