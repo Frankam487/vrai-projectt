@@ -143,7 +143,7 @@ const Reserver = () => {
             Heures d'ouverture : 9h - 19h, Lundi au Vendredi
           </p>
           <p className="text-sm mt-4">
-            © 2024 Salon de Coiffure. Tous droits réservés.
+            © 2025 Salon de Coiffure. Tous droits réservés.
           </p>
         </div>
       </footer>

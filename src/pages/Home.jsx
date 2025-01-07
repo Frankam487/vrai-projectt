@@ -93,8 +93,6 @@ const Home = () => {
               mois en cours.
             </motion.li>
           </motion.ul>
-
-          {/* Section NB animée au scroll */}
           <motion.h3
             className="text-[18px]"
             initial={{ opacity: 0 }}
