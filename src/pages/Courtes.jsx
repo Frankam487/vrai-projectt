@@ -22,11 +22,9 @@ const Courtes = () => {
           et peuvent être portées de différentes manières pour s'adapter à
           toutes vos envies.
         </p>
-
-        {/* Section Réservation */}
         <div className="text-center mb-8">
           <NavLink
-            to="/reserver" // Remplace par la route vers la réservation ou la page souhaitée
+            to="/reserver" 
             className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all"
           >
             Réserver maintenant

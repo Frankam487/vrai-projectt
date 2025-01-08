@@ -90,11 +90,12 @@ const Reserver = () => {
             <div
               onClick={() => handleDateSelection(date)}
               className={`cursor-pointer p-8 md:p-10 lg:p-12 w-full max-w-xs lg:max-w-sm bg-gradient-to-r
-                ${selectedDate && selectedDate.getTime() === date.getTime() ? 'from-teal-500 to-teal-700 text-white' : 'from-gray-300 to-gray-500 text-gray-700'}
+                ${selectedDate && selectedDate.getTime() === date.getTime() ? "from-teal-500 to-teal-700 text-white" : "from-gray-300 to-gray-500 text-gray-700"}
                 rounded-lg shadow-2xl transform transition-all hover:scale-105 hover:shadow-lg hover:opacity-90 text-center
                 flex flex-col justify-center items-center animate__animated animate__bounceIn`}
               role="button"
-              aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}>
+              aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}
+            >
               <p className="text-lg md:text-xl font-semibold">
                 {formatDay(date)} {/* Affiche le jour de la semaine */}
               </p>
@@ -114,10 +115,11 @@ const Reserver = () => {
         <button
           onClick={handleEmailRedirection}
           className={`px-8 py-4 text-white font-semibold rounded-lg shadow-lg
-            ${selectedDate ? 'bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105' : 'bg-gray-400 cursor-not-allowed'}
+            ${selectedDate ? "bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105" : "bg-gray-400 cursor-not-allowed"}
             transform transition-all`}
           disabled={!selectedDate}
-          aria-disabled={!selectedDate}>
+          aria-disabled={!selectedDate}
+        >
           Réserver par email
         </button>
       </div>
@@ -126,19 +128,18 @@ const Reserver = () => {
       {selectedDate && (
         <div className="mt-6 text-center text-xl font-semibold text-teal-600 animate__animated animate__fadeIn animate__delay-3s">
           <p>
-            Vous avez sélectionné le {selectedDate.toLocaleDateString()} à{' '}
+            Vous avez sélectionné le {selectedDate.toLocaleDateString()} à{" "}
             {selectedDate.toLocaleTimeString()}.
           </p>
         </div>
       )}
 
-      {/* Footer avec informations supplémentaires */}
       <footer className="w-full bg-teal-800 text-white py-6 mt-12">
         <div className="max-w-screen-lg mx-auto text-center">
           <p className="text-xl mb-4">Salon de Coiffure</p>
-          <p className="text-md mb-2">📍 Adresse : 123 Rue</p>
-          <p className="text-md mb-2">📞 Téléphone : 01 23 45 67 89</p>
-          <p className="text-md mb-2">✉️ Email : contact@saloncoiffure.com</p>
+          <p className="text-md mb-2">📍 Adresse : 6423 Schwyz</p>
+          <p className="text-md mb-2">📞 Téléphone : 0000000000</p>
+          <p className="text-md mb-2">✉️ Email : mfokamkemgne@icloud.com </p>
           <p className="text-sm">
             Heures d'ouverture : 9h - 19h, Lundi au Vendredi
           </p>
