@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 const Contact = () => {
   return (
     <div className="bg-gradient-to-r from-blue-400 via-green-500 to-teal-600 font-sans leading-normal tracking-normal overflow-hidden">
-      {/* Header avec animation et flou sur l'image */}
+
       <header
         className="text-center py-20 bg-cover bg-center bg-blur-sm"
         style={{
-          backgroundImage: 'url("./logo.jpg")',
+          backgroundImage: 'url("../../public/logo.jpg")center/cover',
         }}
       >
         <motion.h1
@@ -128,7 +128,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          &copy; 2024 Salon de Beauté. Tous droits réservés.
+          &copy; 2025 Salon de Beauté. Tous droits réservés.
         </motion.p>
       </footer>
     </div>

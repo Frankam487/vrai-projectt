@@ -8,7 +8,7 @@ const Courtes = () => {
           <img
             src="/courte.jpg"
             alt="Box Braids Longues"
-            className="w-full sm:w-auto h-94 object-cover object-center rounded-lg shadow-lg"
+            className="w-full sm:w-auto h-80 object-cover object-center rounded-sm shadow-lg"
           />
         </div>
 

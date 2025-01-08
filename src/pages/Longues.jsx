@@ -4,12 +4,12 @@ const Longues = () => {
   return (
     <div className="flex bg-red-950 justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
-
         <div className="flex justify-center mb-6">
           <img
-            src="/blarge.jpg"
+          src="/bclassique.jpg"
+            // src="/blarge.jpg"
             alt="Box Braids Longues"
-            className="w-full h-96 object-cover rounded-lg shadow-xl"
+            className="w-full sm:w-auto h-80 object-cover object-center rounded-sm shadow-lg"
           />
         </div>
         <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-4">
@@ -23,11 +23,11 @@ const Longues = () => {
           toutes vos envies.
         </p>
 
-
         <div className="text-center mb-8">
           <NavLink
             to="/reserver"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all">
+            className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all"
+          >
             Réserver maintenant
           </NavLink>
         </div>
