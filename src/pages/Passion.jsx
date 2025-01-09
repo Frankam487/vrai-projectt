@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Header from '../components/Header';
 
 const Passion = () => {
   const [data, setData] = useState([
@@ -31,6 +32,7 @@ const Passion = () => {
 
   return (
     <div className="flex justify-center flex-wrap gap-8 p-8">
+    <Header/>
       {data.map(({ id, title, message, route, gradient }) => (
         <div
           key={id}
