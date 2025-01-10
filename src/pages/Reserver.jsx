@@ -5,17 +5,20 @@ import "slick-carousel/slick/slick-theme.css";
 import "animate.css";
 
 // Fonction pour générer les dates disponibles du mois avec un écart de 2 heures
-const generateDatesForMonth = (month, year) => {
+const generateDatesForWeek = (currentDate) => {
   const dates = [];
-  const startDate = new Date(year, month, 1);
-  const endDate = new Date(year, month + 1, 0);
+  const startDate = new Date(currentDate); // Date actuelle
+  startDate.setHours(8, 0, 0, 0); // Fixe l'heure à 8h du matin du jour actuel
+
+  const endDate = new Date(startDate);
+  endDate.setDate(startDate.getDate() + 7); // Génère les dates pour la semaine suivante
 
   while (startDate <= endDate) {
     const dateObj = new Date(startDate);
     for (let hour = 8; hour < 19; hour += 2) {
-      // On saute de 2 heures à chaque itération
+      // Saut de 2 heures
       for (let minute = 0; minute < 60; minute += 60) {
-        // Prend les créneaux à l'heure pile
+        // Créneaux à l'heure pile
         const timeSlot = new Date(
           dateObj.getFullYear(),
           dateObj.getMonth(),
@@ -43,12 +46,11 @@ const Reserver = () => {
   const [customerEmail, setCustomerEmail] = useState("");
 
   useEffect(() => {
-    // Simuler la récupération des dates disponibles
-    setTimeout(() => {
-      const dates = generateDatesForMonth(1, 2025); // Exemple pour février 2025
-      setAvailableDates(dates);
-      setLoading(false);
-    }, 1000);
+    // Générer les créneaux horaires à partir de la date actuelle
+    const currentDate = new Date(); // Récupère la date actuelle
+    const dates = generateDatesForWeek(currentDate);
+    setAvailableDates(dates);
+    setLoading(false);
   }, []);
 
   const handleDateSelection = (date) => {
