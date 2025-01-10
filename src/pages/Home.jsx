@@ -4,6 +4,7 @@ import List from '../components/List';
 import Header from '../components/Header';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'; // Importation de motion
+import WhatsAppButton from '../components/WhatsappButton';
 
 const Home = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -290,6 +291,7 @@ const Home = () => {
             </motion.h4>
           </div>
           <List />
+          <WhatsAppButton/>
         </div>
       </div>
       <Footer />
