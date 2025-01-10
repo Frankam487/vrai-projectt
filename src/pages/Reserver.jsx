@@ -13,26 +13,44 @@ const generateDatesForWeek = (currentDate) => {
   const endDate = new Date(startDate);
   endDate.setDate(startDate.getDate() + 7); // Génère les dates pour la semaine suivante
 
+  // Nous n'ajoutons que les créneaux de matinée (8h) et de midi (12h)
   while (startDate <= endDate) {
-    const dateObj = new Date(startDate);
-    for (let hour = 8; hour < 19; hour += 2) {
-      // Saut de 2 heures
-      for (let minute = 0; minute < 60; minute += 60) {
-        // Créneaux à l'heure pile
-        const timeSlot = new Date(
-          dateObj.getFullYear(),
-          dateObj.getMonth(),
-          dateObj.getDate(),
-          hour,
-          minute,
-          0,
-          0
-        );
-        dates.push(timeSlot);
-      }
+    // Exclure les dates passées
+    if (startDate < new Date()) {
+      startDate.setDate(startDate.getDate() + 1); // Passe à la journée suivante
+      continue;
     }
+
+    const dateObj = new Date(startDate);
+    // Période du matin (8h)
+    const morningSlot = new Date(
+      dateObj.getFullYear(),
+      dateObj.getMonth(),
+      dateObj.getDate(),
+      8,
+      0,
+      0,
+      0
+    );
+    // Période de midi (12h)
+    const noonSlot = new Date(
+      dateObj.getFullYear(),
+      dateObj.getMonth(),
+      dateObj.getDate(),
+      12,
+      0,
+      0,
+      0
+    );
+
+    // Ajouter les créneaux horaires
+    dates.push(morningSlot);
+    dates.push(noonSlot);
+
+    // Passe à la journée suivante
     startDate.setDate(startDate.getDate() + 1);
   }
+
   return dates;
 };
 
@@ -54,6 +72,15 @@ const Reserver = () => {
   }, []);
 
   const handleDateSelection = (date) => {
+    const currentDate = new Date();
+    const dateDiff = date.getTime() - currentDate.getTime();
+    const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000; // 7 jours en millisecondes
+
+    // Vérifie si la date est dans le passé ou au-delà de 7 jours
+    if (dateDiff < 0 || dateDiff > sevenDaysInMilliseconds) {
+      return; // Ne rien faire si la date est invalide
+    }
+
     setSelectedDate(date);
   };
 
@@ -129,27 +156,38 @@ const Reserver = () => {
       {/* Carrousel de dates */}
       {!loading && (
         <Slider {...settings} className="w-full max-w-full mb-12">
-          {availableDates.map((date, index) => (
-            <div key={index} className="flex justify-center">
-              <div
-                onClick={() => handleDateSelection(date)}
-                className={`cursor-pointer p-8 w-full max-w-xs lg:max-w-sm bg-gradient-to-r
-                  ${selectedDate && selectedDate.getTime() === date.getTime() ? "from-teal-500 to-teal-700 text-white" : "from-gray-300 to-gray-500 text-gray-700"}
-                  rounded-lg shadow-2xl transform transition-all hover:scale-105 hover:shadow-lg hover:opacity-90 text-center
-                  flex flex-col justify-center items-center animate__animated animate__bounceIn`}
-                role="button"
-                aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}
-              >
-                <p className="text-lg md:text-xl font-semibold">
-                  {formatDay(date)}
-                </p>
-                <p className="text-md md:text-lg font-semibold">
-                  {date.toLocaleDateString()}
-                </p>
-                <p className="text-sm md:text-md mt-2">{formatTime(date)}</p>
+          {availableDates.map((date, index) => {
+            const currentDate = new Date();
+            const dateDiff = date.getTime() - currentDate.getTime();
+            const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;
+
+            // Vérifie si la date est dans le passé ou au-delà de 7 jours
+            const isDateDisabled =
+              dateDiff < 0 || dateDiff > sevenDaysInMilliseconds;
+
+            return (
+              <div key={index} className="flex justify-center">
+                <div
+                  onClick={() => handleDateSelection(date)}
+                  className={`cursor-pointer p-8 w-full max-w-xs lg:max-w-sm bg-gradient-to-r
+                    ${selectedDate && selectedDate.getTime() === date.getTime() ? "from-teal-500 to-teal-700 text-white" : "from-gray-300 to-gray-500 text-gray-700"}
+                    ${isDateDisabled ? "bg-gray-400 cursor-not-allowed" : "hover:scale-105 hover:shadow-lg hover:opacity-90"}
+                    rounded-lg shadow-2xl transform transition-all text-center flex flex-col justify-center items-center animate__animated animate__bounceIn`}
+                  role="button"
+                  aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}
+                  style={isDateDisabled ? { pointerEvents: "none" } : {}}
+                >
+                  <p className="text-lg md:text-xl font-semibold">
+                    {formatDay(date)}
+                  </p>
+                  <p className="text-md md:text-lg font-semibold">
+                    {date.toLocaleDateString()}
+                  </p>
+                  <p className="text-sm md:text-md mt-2">{formatTime(date)}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </Slider>
       )}
 
