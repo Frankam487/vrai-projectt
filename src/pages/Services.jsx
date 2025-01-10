@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa"; // Icône pour l'arrow
 import "animate.css"; // Pour les animations
+import { NavLink } from "react-router-dom";
 
 // Liste des services avec catégories, images, descriptions et prix
 const servicesList = [
@@ -9,40 +10,40 @@ const servicesList = [
     name: "Coupe Homme",
     category: "Coupe",
     description: "Coupe de cheveux classique ou moderne pour hommes.",
-    price: "20 €",
-    imageUrl: "https://via.placeholder.com/300?text=Coupe+Homme",
+    price: "20 CHF",
+    imageUrl: "../../public/homme.jpg",
   },
   {
     id: 2,
     name: "Coupe Femme",
     category: "Coupe",
     description: "Coupe de cheveux pour femmes, selon vos envies.",
-    price: "30 €",
-    imageUrl: "https://via.placeholder.com/300?text=Coupe+Femme",
+    price: "30 CHF",
+    imageUrl: "../../public/box-classique.jpg",
   },
   {
     id: 3,
     name: "Coloration",
     category: "Coloration",
     description: "Coloration professionnelle, transformation de couleur.",
-    price: "50 €",
-    imageUrl: "https://via.placeholder.com/300?text=Coloration",
+    price: "50 CHF",
+    imageUrl: "../../public/hair-1378218.jpg",
   },
   {
     id: 4,
     name: "Lissage Brésilien",
     category: "Traitements",
     description: "Traitement capillaire pour des cheveux lisses et brillants.",
-    price: "150 €",
-    imageUrl: "https://via.placeholder.com/300?text=Lissage+Brésilien",
+    price: "150 CHF",
+    imageUrl: "../../public/fl.jpg",
   },
   {
     id: 5,
     name: "Balayage",
     category: "Coloration",
     description: "Technique de coloration naturelle pour un effet soleil.",
-    price: "80 €",
-    imageUrl: "https://via.placeholder.com/300?text=Balayage",
+    price: "80 CHF",
+    imageUrl: "../../public/courte.jpg",
   },
   // Ajoutez autant de services que nécessaire...
 ];
@@ -115,7 +116,13 @@ const Services = () => {
               {service.price}
             </p>
             <button className="mt-4 px-4 py-2 rounded-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 transition-all">
-              Réservez maintenant <FaArrowRight className="inline ml-2" />
+              <NavLink
+                to="/reserver"
+                className="decoration-none mt-4 p-1 rounded-lg no-underline text-white font-semibold hover:bg-teal-700 transition-all w-full"
+              >
+                Reserver Maintenant
+              </NavLink>{" "}
+              <FaArrowRight className="inline ml-2" />
             </button>
           </div>
         ))}
