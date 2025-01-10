@@ -41,6 +41,7 @@ import Soft1 from './pages/Soft1';
 import Soft2 from './pages/Soft2';
 import Soft3 from './pages/Soft3';
 import WhatsAppButton from './components/WhatsappButton';
+import Services from './pages/Services';
 const App = () => {
   return (
     <BrowserRouter>
@@ -82,6 +83,7 @@ const App = () => {
         <Route path="/reserver" element={<Reserver />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/reserver" element={<Reservation />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
       <WhatsAppButton/>
     </BrowserRouter>

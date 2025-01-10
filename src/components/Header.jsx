@@ -131,11 +131,11 @@ const Header = () => {
             className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
             About
           </NavLink>
-          <a
-            href="#services"
+          <NavLink
+            to="/services"
             className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
             Services
-          </a>
+          </NavLink>
           <NavLink
             to="/contact"
             className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
