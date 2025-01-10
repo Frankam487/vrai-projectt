@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'animate.css';
+import { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "animate.css";
 
+// Fonction pour générer les dates disponibles du mois avec un écart de 2 heures
 const generateDatesForMonth = (month, year) => {
   const dates = [];
   const startDate = new Date(year, month, 1);
@@ -11,9 +12,19 @@ const generateDatesForMonth = (month, year) => {
 
   while (startDate <= endDate) {
     const dateObj = new Date(startDate);
-    for (let hour = 8; hour < 12; hour++) {
-      for (let minute = 0; minute < 60; minute += 30) {
-        const timeSlot = new Date(dateObj.setHours(hour, minute, 0, 0));
+    for (let hour = 8; hour < 19; hour += 2) {
+      // On saute de 2 heures à chaque itération
+      for (let minute = 0; minute < 60; minute += 60) {
+        // Prend les créneaux à l'heure pile
+        const timeSlot = new Date(
+          dateObj.getFullYear(),
+          dateObj.getMonth(),
+          dateObj.getDate(),
+          hour,
+          minute,
+          0,
+          0
+        );
         dates.push(timeSlot);
       }
     }
@@ -22,23 +33,56 @@ const generateDatesForMonth = (month, year) => {
   return dates;
 };
 
+// Composant principal de réservation
 const Reserver = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const availableDates = generateDatesForMonth(11, 2024);
+  const [availableDates, setAvailableDates] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [customerName, setCustomerName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+
+  useEffect(() => {
+    // Simuler la récupération des dates disponibles
+    setTimeout(() => {
+      const dates = generateDatesForMonth(1, 2025); // Exemple pour février 2025
+      setAvailableDates(dates);
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   const handleDateSelection = (date) => {
     setSelectedDate(date);
   };
 
-  const handleEmailRedirection = () => {
-    if (selectedDate) {
-      const subject = `Réservation Salon de Coiffure - ${selectedDate.toLocaleDateString()}`;
-      const body = `Bonjour, je souhaite réserver pour la date suivante : ${selectedDate.toLocaleDateString()} à ${selectedDate.toLocaleTimeString()}.`;
-      window.location.href = `mailto:contact@saloncoiffure.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    } else {
-      alert('Veuillez sélectionner une date avant de réserver.');
+  const handleSubmit = () => {
+    if (!customerName || !customerEmail || !selectedDate) {
+      setError("Tous les champs sont obligatoires !");
+      return;
     }
+
+    // Simuler l'envoi de la réservation par email
+    const subject = `Réservation Salon de Coiffure - ${selectedDate.toLocaleDateString()}`;
+    const body = `Bonjour, je souhaite réserver pour la date suivante : ${selectedDate.toLocaleDateString()} à ${selectedDate.toLocaleTimeString()}.\nNom : ${customerName}\nEmail : ${customerEmail}`;
+    window.location.href = `mailto:contact@saloncoiffure.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Réinitialiser le formulaire
+    setCustomerName("");
+    setCustomerEmail("");
+    setSelectedDate(null);
+    setError(null);
   };
 
+  const formatDay = (date) => {
+    const options = { weekday: "long" };
+    return new Intl.DateTimeFormat("fr-FR", options).format(date);
+  };
+
+  const formatTime = (date) => {
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
+
+  // Paramètres du carrousel Slick
   const settings = {
     infinite: true,
     centerMode: true,
@@ -61,16 +105,6 @@ const Reserver = () => {
     ),
   };
 
-
-  const formatDay = (date) => {
-    const options = { weekday: 'long' };
-    return new Intl.DateTimeFormat('fr-FR', options).format(date);
-  };
-
-  const formatTime = (date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6 md:p-8">
       <header className="text-center mb-12">
@@ -83,48 +117,80 @@ const Reserver = () => {
         </p>
       </header>
 
-      {/* Carrousel de dates */}
-      <Slider {...settings} className="w-full max-w-full mb-12">
-        {availableDates.map((date, index) => (
-          <div key={index} className="flex justify-center">
-            <div
-              onClick={() => handleDateSelection(date)}
-              className={`cursor-pointer p-8 md:p-10 lg:p-12 w-full max-w-xs lg:max-w-sm bg-gradient-to-r
-                ${selectedDate && selectedDate.getTime() === date.getTime() ? "from-teal-500 to-teal-700 text-white" : "from-gray-300 to-gray-500 text-gray-700"}
-                rounded-lg shadow-2xl transform transition-all hover:scale-105 hover:shadow-lg hover:opacity-90 text-center
-                flex flex-col justify-center items-center animate__animated animate__bounceIn`}
-              role="button"
-              aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}
-            >
-              <p className="text-lg md:text-xl font-semibold">
-                {formatDay(date)} {/* Affiche le jour de la semaine */}
-              </p>
-              <p className="text-md md:text-lg font-semibold">
-                {date.toLocaleDateString()} {/* Affiche la date */}
-              </p>
-              <p className="text-sm md:text-md mt-2">
-                {formatTime(date)} {/* Affiche l'heure sélectionnée */}
-              </p>
-            </div>
-          </div>
-        ))}
-      </Slider>
+      {/* Indicateur de chargement */}
+      {loading && (
+        <div className="text-center text-teal-600 text-xl animate__animated animate__fadeIn">
+          Chargement des créneaux disponibles...
+        </div>
+      )}
 
-      {/* Bouton de redirection vers l'email */}
-      <div className="mt-8 animate__animated animate__fadeIn animate__delay-2s">
+      {/* Carrousel de dates */}
+      {!loading && (
+        <Slider {...settings} className="w-full max-w-full mb-12">
+          {availableDates.map((date, index) => (
+            <div key={index} className="flex justify-center">
+              <div
+                onClick={() => handleDateSelection(date)}
+                className={`cursor-pointer p-8 w-full max-w-xs lg:max-w-sm bg-gradient-to-r
+                  ${selectedDate && selectedDate.getTime() === date.getTime() ? "from-teal-500 to-teal-700 text-white" : "from-gray-300 to-gray-500 text-gray-700"}
+                  rounded-lg shadow-2xl transform transition-all hover:scale-105 hover:shadow-lg hover:opacity-90 text-center
+                  flex flex-col justify-center items-center animate__animated animate__bounceIn`}
+                role="button"
+                aria-label={`Sélectionner la date ${date.toLocaleDateString()}`}
+              >
+                <p className="text-lg md:text-xl font-semibold">
+                  {formatDay(date)}
+                </p>
+                <p className="text-md md:text-lg font-semibold">
+                  {date.toLocaleDateString()}
+                </p>
+                <p className="text-sm md:text-md mt-2">{formatTime(date)}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      )}
+
+      {/* Formulaire de réservation */}
+      <div className="mt-8 w-full max-w-md">
+        <input
+          type="text"
+          className="w-full p-4 mb-4 border border-teal-300 rounded-lg"
+          placeholder="Votre Nom"
+          value={customerName}
+          onChange={(e) => setCustomerName(e.target.value)}
+        />
+        <input
+          type="email"
+          className="w-full p-4 mb-4 border border-teal-300 rounded-lg"
+          placeholder="Votre Email"
+          value={customerEmail}
+          onChange={(e) => setCustomerEmail(e.target.value)}
+        />
+      </div>
+
+      {/* Message d'erreur */}
+      {error && (
+        <div className="mt-4 text-red-600 text-center font-semibold">
+          {error}
+        </div>
+      )}
+
+      {/* Bouton de soumission */}
+      <div className="mt-8">
         <button
-          onClick={handleEmailRedirection}
+          onClick={handleSubmit}
           className={`px-8 py-4 text-white font-semibold rounded-lg shadow-lg
             ${selectedDate ? "bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105" : "bg-gray-400 cursor-not-allowed"}
             transform transition-all`}
           disabled={!selectedDate}
           aria-disabled={!selectedDate}
         >
-          Réserver par email
+          Finaliser la Réservation
         </button>
       </div>
 
-      {/* Message de confirmation si une date est sélectionnée */}
+      {/* Affichage de la sélection */}
       {selectedDate && (
         <div className="mt-6 text-center text-xl font-semibold text-teal-600 animate__animated animate__fadeIn animate__delay-3s">
           <p>
