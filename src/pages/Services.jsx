@@ -70,7 +70,7 @@ const Services = () => {
       </header>
 
       {/* Filtre des catégories */}
-      <div className="mb-8 flex justify-center gap-4">
+      <div className="mb-8 flex flex-wrap justify-center gap-4">
         <button
           onClick={() => setFilter("All")}
           className={`px-6 py-3 rounded-lg font-semibold ${filter === "All" ? "bg-teal-600 text-white" : "bg-teal-100 text-teal-700"} hover:bg-teal-400 transition-all`}
@@ -98,7 +98,7 @@ const Services = () => {
       </div>
 
       {/* Liste des services */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-screen-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-screen-xl">
         {filteredServices.map((service) => (
           <div
             key={service.id}
@@ -122,7 +122,7 @@ const Services = () => {
                 className="decoration-none mt-4 p-1 rounded-lg no-underline text-white font-semibold hover:bg-teal-700 transition-all w-full"
               >
                 Reserver Maintenant
-              </NavLink>{" "}
+              </NavLink>
               <FaArrowRight className="inline ml-2" />
             </button>
           </div>
@@ -130,21 +130,7 @@ const Services = () => {
       </div>
 
       {/* Footer */}
-      {/* <footer className="w-full bg-teal-800 text-white py-6 ">
-        <div className="max-w-screen-lg mx-auto text-center">
-          <p className="text-xl mb-4">Salon de Coiffure</p>
-          <p className="text-md mb-2">📍 Adresse : 6423 Schwyz</p>
-          <p className="text-md mb-2">📞 Téléphone : 0000000000</p>
-          <p className="text-md mb-2">✉️ Email : mfokamkemgne@icloud.com</p>
-          <p className="text-sm">
-            Heures d'ouverture : 9h - 19h, Lundi au Vendredi
-          </p>
-          <p className="text-sm mt-4">
-            © 2025 Salon de Coiffure. Tous droits réservés.
-          </p>
-        </div>
-      </footer> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
