@@ -1,28 +1,26 @@
-import { NavLink } from 'react-router-dom';
-import Footer from '../components/Footer';
-import List from '../components/List';
-import Header from '../components/Header';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion'; // Importation de motion
-import WhatsAppButton from '../components/WhatsappButton';
+import { NavLink } from "react-router-dom";
+import Footer from "../components/Footer";
+import List from "../components/List";
+import Header from "../components/Header";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion"; // Importation de motion
+import WhatsAppButton from "../components/WhatsappButton";
 
 const Home = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
+      "(prefers-color-scheme: dark)"
     ).matches;
     setIsDarkMode(prefersDark);
   }, []);
 
-
-
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -172,7 +170,7 @@ const Home = () => {
             transition={{ duration: 1, delay: 1.8 }}
             viewport={{ once: true }}
           >
-            Question : beauty
+            Question : House
           </motion.h6>
           <motion.h6
             className="font-bold"
@@ -181,7 +179,7 @@ const Home = () => {
             transition={{ duration: 1, delay: 1.9 }}
             viewport={{ once: true }}
           >
-            Réponse : express
+            Réponse : Beauty
           </motion.h6>
           <motion.p
             className="my-4"
@@ -291,7 +289,7 @@ const Home = () => {
             </motion.h4>
           </div>
           <List />
-          <WhatsAppButton/>
+          <WhatsAppButton />
         </div>
       </div>
       <Footer />
