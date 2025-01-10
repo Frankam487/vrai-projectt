@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa"; // Icône pour l'arrow
 import "animate.css"; // Pour les animations
 import { NavLink } from "react-router-dom";
+import Footer from "../components/Footer";
 
 // Liste des services avec catégories, images, descriptions et prix
 const servicesList = [
@@ -129,7 +130,7 @@ const Services = () => {
       </div>
 
       {/* Footer */}
-      <footer className="w-full bg-teal-800 text-white py-6 mt-12">
+      {/* <footer className="w-full bg-teal-800 text-white py-6 ">
         <div className="max-w-screen-lg mx-auto text-center">
           <p className="text-xl mb-4">Salon de Coiffure</p>
           <p className="text-md mb-2">📍 Adresse : 6423 Schwyz</p>
@@ -142,7 +143,8 @@ const Services = () => {
             © 2025 Salon de Coiffure. Tous droits réservés.
           </p>
         </div>
-      </footer>
+      </footer> */}
+      <Footer/>
     </div>
   );
 };
