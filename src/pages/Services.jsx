@@ -12,7 +12,7 @@ const servicesList = [
     category: "Coupe",
     description: "Coupe de cheveux classique ou moderne pour hommes.",
     price: "20 CHF",
-    imageUrl: "../../public/homme.jpg",
+    imageUrl: "./homme.jpg",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const servicesList = [
     category: "Coupe",
     description: "Coupe de cheveux pour femmes, selon vos envies.",
     price: "30 CHF",
-    imageUrl: "../../public/box-classique.jpg",
+    imageUrl: "./box-classique.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const servicesList = [
     category: "Coloration",
     description: "Coloration professionnelle, transformation de couleur.",
     price: "50 CHF",
-    imageUrl: "../../public/hair-1378218.jpg",
+    imageUrl: "./hair-1378218.jpg",
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const servicesList = [
     category: "Traitements",
     description: "Traitement capillaire pour des cheveux lisses et brillants.",
     price: "150 CHF",
-    imageUrl: "../../public/fl.jpg",
+    imageUrl: "./fl.jpg",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const servicesList = [
     category: "Coloration",
     description: "Technique de coloration naturelle pour un effet soleil.",
     price: "80 CHF",
-    imageUrl: "../../public/courte.jpg",
+    imageUrl: "./courte.jpg",
   },
   // Ajoutez autant de services que nécessaire...
 ];
