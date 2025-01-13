@@ -1,5 +1,5 @@
 import React from "react";
-import { FaWhatsapp } from "react-icons/fa"; 
+import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = () => {
   const phoneNumber = "+237690461830"; // Remplacez par votre numéro WhatsApp (avec l'indicatif pays, sans le "+")
@@ -15,7 +15,7 @@ const WhatsAppButton = () => {
       aria-label="Contacter via WhatsApp"
     >
       <FaWhatsapp className="w-12 h-12" />{" "}
-      {/* L'icône WhatsApp avec une taille de 48x48px */}
+      
     </a>
   );
 };
