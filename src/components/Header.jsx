@@ -44,12 +44,7 @@ const Header = () => {
             className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
             Acceuil
           </NavLink>
-          <NavLink
-            to="/about"
 
-            className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
-            About
-          </NavLink>
           <NavLink
             to="/services"
             className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
@@ -73,13 +68,9 @@ const Header = () => {
             className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
             Home
           </NavLink>
+
           <NavLink
-            to="/about"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
-            About
-          </NavLink>
-          <NavLink
-            to="/about"
+            to="/services"
             className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
             Services
           </NavLink>
