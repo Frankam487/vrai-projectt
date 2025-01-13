@@ -28,7 +28,7 @@ const Home = () => {
     <div className="home ">
       <Header />
       <div className="bg-slate-100 home-content">
-        {/* Titre avec apparition au scroll */}
+        
         <motion.h1
           className="text-center text-4xl font-bold mt-8"
           initial={{ opacity: 0, y: -50 }}

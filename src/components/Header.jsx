@@ -14,21 +14,24 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-gray-500 via-teal-500 to-gray-500 text-white shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="max-w-screen-xl mx-auto px-6 py-2 flex justify-between items-center">
-
-        {/* Logo */}
         <div className="text-3xl font-bold tracking-wide">
-          <span className="text-4xl font-extrabold">House</span>Beauty
+          <span to="/" className="text-2xl font-bold">
+            House
+          </span>
+          Beauty
         </div>
 
         <button
           className="lg:hidden p-2 text-white focus:outline-none"
-          onClick={toggleMenu}>
+          onClick={toggleMenu}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="currentColor">
+            stroke="currentColor"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -37,46 +40,54 @@ const Header = () => {
             />
           </svg>
         </button>
-        {/* Menu (Desktop) */}
+
         <nav className="hidden lg:flex  space-x-8">
           <NavLink
             to="/"
-            className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
+            className="hover:scale-110
+            no-underline font-bold text-teal-400 transform transition duration-300 ease-in-out
+            font-hover:text-yellow-300 px-4 py-2"
+          >
             Acceuil
           </NavLink>
 
           <NavLink
             to="/services"
-            className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
+            className="hover:scale-110 text-teal-400 font-bold transform no-underline transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 "
+          >
             Services
           </NavLink>
           <NavLink
             to="/contact"
-            className="hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 rounded-lg">
+            className=" text-teal-400 font-bold hover:scale-110 transform transition duration-300 ease-in-out  no-underline hover:text-yellow-300 px-4 py-2"
+          >
             Contact
           </NavLink>
         </nav>
       </div>
 
-      {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-gray-800 bg-opacity-80 fixed top-0 left-0 w-full h-full transition-all duration-300 ease-in-out ${isMenuOpen ? 'block' : 'hidden'}`}
-        onClick={() => setIsMenuOpen(false)}>
+        className={`lg:hidden bg-gray-800 bg-opacity-80 fixed top-0 left-0 w-full h-full transition-all duration-300 ease-in-out ${isMenuOpen ? "block" : "hidden"}`}
+        onClick={() => setIsMenuOpen(false)}
+      >
         <div className="flex flex-col items-center justify-center space-y-6 mt-24">
           <NavLink
             to="/"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
+            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+          >
             Home
           </NavLink>
 
           <NavLink
             to="/services"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
+            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+          >
             Services
           </NavLink>
           <NavLink
             to="/contact"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 rounded-lg">
+            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+          >
             Contact
           </NavLink>
         </div>
