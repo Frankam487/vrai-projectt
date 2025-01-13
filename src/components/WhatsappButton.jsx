@@ -15,7 +15,6 @@ const WhatsAppButton = () => {
       aria-label="Contacter via WhatsApp"
     >
       <FaWhatsapp className="w-12 h-12" />{" "}
-      
     </a>
   );
 };
