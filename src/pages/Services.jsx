@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { FaArrowRight } from "react-icons/fa"; // Icône pour l'arrow
-import "animate.css"; // Pour les animations
+import { FaArrowRight } from "react-icons/fa";
+import "animate.css";
 import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 
-// Liste des services avec catégories, images, descriptions et prix
 const servicesList = [
   {
     id: 1,
