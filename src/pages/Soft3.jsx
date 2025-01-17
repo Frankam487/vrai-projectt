@@ -1,5 +1,4 @@
-import CoiffureDetail from '../components/CoiffureDetail'; // Importation du composant réutilisable
-
+import CoiffureDetail from '../components/CoiffureDetail'; 
 const Soft3 = () => {
   return (
     <CoiffureDetail
