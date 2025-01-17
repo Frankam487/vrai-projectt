@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com"; // Importer EmailJS
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,24 +9,17 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Pour afficher un état de chargement
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Gérer les changements dans le formulaire
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Simuler la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true); // Afficher le chargement
+    setIsLoading(true);
     emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Remplacez par votre service_id
-        "YOUR_TEMPLATE_ID", // Remplacez par votre template_id
-        formData,
-        "YOUR_USER_ID" // Remplacez par votre user_id
-      )
+      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_USER_ID")
       .then(
         (response) => {
           console.log("Message envoyé avec succès:", response);
@@ -42,7 +35,7 @@ const Contact = () => {
 
   return (
     <div className="bg-gradient-to-r from-blue-400 via-green-500 to-teal-600 font-sans leading-normal tracking-normal overflow-hidden">
-      {/* Header */}
+      
       <header
         className="text-center py-20 bg-cover bg-center bg-blur-sm"
         style={{
@@ -144,7 +137,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:w-1/2 mt-12 lg:mt-0">
             <motion.div
               className="bg-white p-8 rounded-lg shadow-lg"
