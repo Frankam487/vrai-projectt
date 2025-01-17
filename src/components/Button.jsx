@@ -1,4 +1,3 @@
-// src/components/Button.jsx
 import { NavLink } from 'react-router-dom';
 
 const Button = ({ text, route, gradient }) => {

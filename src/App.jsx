@@ -12,12 +12,6 @@ import Box from './pages/Box';
 import Twist from './pages/Twist';
 import TwistClassique from "./pages/TwistClassique";
 import TwistCourt from "./pages/TwistCourt";
-// import TwistTire from './pages/Twisttire';
-// import TwistLong from './pages/TwistLong';
-// import Nkotless from './pages/Nkotless';
-// import Crochet from './pages/Crochet';
-// import Soft from './pages/Soft';
-// import Passion from './pages/Passion';
 import French from './pages/French';
 import French3 from './pages/French3';
 import French2 from './pages/French2';
@@ -57,8 +51,6 @@ const App = () => {
         <Route path="/nkotless4" element={<Nkotless4 />} />
         <Route path="/crochet" element={<Crochet />} />
         <Route path="/soft" element={<Soft />} />
-
-        {/* <Route path="/twisttire" element={<TwistTire />} /> */}
         <Route path="/passion" element={<Passion />} />
         <Route path="/soft1" element={<Soft1 />} />
         <Route path="/soft2" element={<Soft2 />} />

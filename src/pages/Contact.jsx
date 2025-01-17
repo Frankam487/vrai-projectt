@@ -1,14 +1,52 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "emailjs-com"; // Importer EmailJS
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Pour afficher un état de chargement
+
+  // Gérer les changements dans le formulaire
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Simuler la soumission du formulaire
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true); // Afficher le chargement
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // Remplacez par votre service_id
+        "YOUR_TEMPLATE_ID", // Remplacez par votre template_id
+        formData,
+        "YOUR_USER_ID" // Remplacez par votre user_id
+      )
+      .then(
+        (response) => {
+          console.log("Message envoyé avec succès:", response);
+          setIsSubmitted(true);
+          setIsLoading(false);
+        },
+        (error) => {
+          console.log("Erreur lors de l'envoi:", error);
+          setIsLoading(false);
+        }
+      );
+  };
+
   return (
     <div className="bg-gradient-to-r from-blue-400 via-green-500 to-teal-600 font-sans leading-normal tracking-normal overflow-hidden">
-
+      {/* Header */}
       <header
         className="text-center py-20 bg-cover bg-center bg-blur-sm"
         style={{
-          backgroundImage: 'url("../../public/logo.jpg")center/cover',
+          backgroundImage: 'url("/logo.jpg") center/cover',
         }}
       >
         <motion.h1
@@ -29,7 +67,7 @@ const Contact = () => {
         </motion.p>
       </header>
 
-
+      {/* Contact Section */}
       <section className="max-w-6xl mx-auto px-4 py-12">
         <motion.div
           className="lg:flex lg:space-x-12"
@@ -37,7 +75,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-
+          {/* Coordonnées */}
           <div className="lg:w-1/2 mt-12 lg:mt-0">
             <motion.h2
               className="text-4xl font-semibold text-white"
@@ -67,7 +105,6 @@ const Contact = () => {
                 >
                   <svg
                     className="w-8 h-8 text-white"
-                    xmlns="./tsmall.jpg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -107,16 +144,80 @@ const Contact = () => {
             </div>
           </div>
 
-
+          {/* Contact Form */}
           <div className="lg:w-1/2 mt-12 lg:mt-0">
-            <motion.img
-              src="./logo.jpg"
-              alt="spa"
-              className="rounded-lg shadow-lg w-full h-full sm:w-auto h-94 object-cover object-center "
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
-            />
+            >
+              <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+                Envoyez-nous un message
+              </h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label
+                    htmlFor="name"
+                    className="block text-lg font-medium text-gray-700"
+                  >
+                    Nom
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="email"
+                    className="block text-lg font-medium text-gray-700"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="message"
+                    className="block text-lg font-medium text-gray-700"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  {isLoading
+                    ? "Envoi en cours..."
+                    : isSubmitted
+                      ? "Message envoyé !"
+                      : "Envoyer"}
+                </button>
+              </form>
+            </motion.div>
           </div>
         </motion.div>
       </section>
