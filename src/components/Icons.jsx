@@ -13,7 +13,7 @@ const Icons = () => {
         <FaFacebook size={27} />
       </a>
       <a
-        href="https://www.snapchat.com/add/,maëlle_kemgne"
+        href="https://www.snapchat.com/add/maëlle_kemgne"
         target="_blank"
         rel="noopener noreferrer"
         className="text-yellow-500 hover:text-yellow-700 transition-colors duration-300"
