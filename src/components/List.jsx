@@ -10,8 +10,8 @@ const List = () => {
             catégorie
           </span>
         </div>
-        <div className="bg-white p-4 mb-8 shadow-md">
-          {/* Carte 1 */}
+        <div className="bg-white p-4 mb-8 shadow-md w-full">
+          
           <div className="flex items-center justify-between my-4 p-3 text-black border-b border-gray-300">
             <h3 className="text-[12px] font-bold">1. BOXBRAIDS MEN</h3>
             <NavLink
