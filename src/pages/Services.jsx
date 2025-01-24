@@ -51,7 +51,7 @@ const servicesList = [
 const Services = () => {
   const [filter, setFilter] = useState("All");
 
-  // Filtrer les services en fonction de la catégorie sélectionnée
+  
   const filteredServices =
     filter === "All"
       ? servicesList

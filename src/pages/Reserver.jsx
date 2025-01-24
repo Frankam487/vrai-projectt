@@ -135,7 +135,7 @@ const Reserver = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6 md:p-8">
+    <div className="min-h-screen my-20 flex flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6 md:p-8">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-teal-700 mb-4 animate__animated animate__fadeIn animate__delay-1s">
           Réservez votre Rendez-vous au Salon de Coiffure
