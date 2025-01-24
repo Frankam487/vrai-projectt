@@ -21,8 +21,8 @@ const Contact = () => {
     }
 
     // Création du lien mailto avec les informations remplies
-    const emailTo = "contact@housebeauty.com"; // L'adresse email du destinataire
-    const subject = encodeURIComponent("Message depuis le site Web"); // Sujet de l'email
+    const emailTo = "fkamgangang06@gmail.com"; // L'adresse email du destinataire
+    const subject = encodeURIComponent("Hey I've a question!!!"); // Sujet de l'email
     const body = encodeURIComponent(`
       Nom: ${name}
       Message: ${message}
@@ -101,7 +101,7 @@ const Contact = () => {
           </div>
         </form>
 
-        
+
         <div className="mt-12 space-y-8">
           <h3 className="text-2xl font-semibold text-teal-800">
             Nos Coordonnées
