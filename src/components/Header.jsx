@@ -14,9 +14,9 @@ const Header = () => {
         <div className="text-4xl font-bold tracking-wide">
           <NavLink
             to="/"
-            className="no-underline text-green-600 font-bold tracking-wide"
+            className="no-underline text-gray-700 font-bold tracking-wide"
           >
-            <span className="text-2xl font-bold">House</span> Beauty
+            <span className="text-2xl font-bold">House</span>Beauty
           </NavLink>
         </div>
 
