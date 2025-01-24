@@ -10,10 +10,10 @@ const Classiques = () => {
             alt="Box Braids Classiques"
             className="w-full sm:w-auto h-94 object-cover object-center rounded-lg shadow-lg"
           />
-          
+
         </div>
 
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">
+        <h2 className="text-3xl my-24 font-semibold text-center text-gray-800 mb-4">
           Box Braids Men
         </h2>
         <p className="text-lg text-gray-600 text-center mb-8">

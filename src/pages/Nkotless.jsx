@@ -27,11 +27,11 @@ const Nkotless = () => {
       route: '/nkotless3',
       gradient: 'from-teal-500 to-purple-500',
     },
-    
+
   ]);
 
   return (
-    <div className="flex justify-center flex-wrap gap-8 p-8">
+    <div className="flex my-20 justify-center flex-wrap gap-8 p-8">
       {data.map(({ id, title, message, route, gradient }) => (
         <div
           key={id}

@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const Soft1 = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./sSmall.jpg"
       title="Locs Small"
@@ -14,6 +16,7 @@ const Soft1 = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

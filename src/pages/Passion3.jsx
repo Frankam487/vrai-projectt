@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const Passion3 = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./fl.jpg"
       title="Fulani Large"
@@ -14,6 +16,7 @@ const Passion3 = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

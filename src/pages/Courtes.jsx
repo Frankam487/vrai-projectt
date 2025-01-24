@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Courtes = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
+    <div className="flex my-24 justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
         <div className="flex justify-center mb-6">
           <img
@@ -24,7 +24,7 @@ const Courtes = () => {
         </p>
         <div className="text-center mb-8">
           <NavLink
-            to="/reserver" 
+            to="/reserver"
             className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-semibold rounded-lg hover:scale-105 transition-all"
           >
             Réserver maintenant

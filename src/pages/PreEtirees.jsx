@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const PreEtirees = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-green-400 to-teal-500">
+    <div className="flex my-20 justify-center items-center min-h-screen bg-gradient-to-r from-green-400 to-teal-500">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
         {/* Section Image */}
         <div className="flex justify-center mb-6">

@@ -166,7 +166,7 @@ const Reserver = () => {
               dateDiff < 0 || dateDiff > sevenDaysInMilliseconds;
 
             return (
-              <div key={index} className="flex justify-center">
+              <div key={index}  className="flex justify-center">
                 <div
                   onClick={() => handleDateSelection(date)}
                   className={`cursor-pointer p-8 w-full max-w-xs lg:max-w-sm bg-gradient-to-r

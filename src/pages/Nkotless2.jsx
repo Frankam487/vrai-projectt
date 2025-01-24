@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const Nkotless2 = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./kssmall.jpg"
       title="Nkotless Braids Small"
@@ -14,6 +16,7 @@ const Nkotless2 = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

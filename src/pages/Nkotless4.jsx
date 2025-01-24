@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const Nkotless4 = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./homme.jpg"
       title="Nkotless Braids Pré-étirés"
@@ -14,6 +16,7 @@ const Nkotless4 = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

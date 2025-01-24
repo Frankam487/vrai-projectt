@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const TwistClassique = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./tmedium.jpg"
       title="Twists Medium"
@@ -14,6 +16,7 @@ const TwistClassique = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

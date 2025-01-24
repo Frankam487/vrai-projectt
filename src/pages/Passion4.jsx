@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail'; // Importation du com
 
 const Passion4 = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./homme.jpg"
       title="Passion Twists Classique"
@@ -14,6 +16,7 @@ const Passion4 = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 

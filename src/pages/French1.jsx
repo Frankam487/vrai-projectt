@@ -3,7 +3,8 @@ import CoiffureDetail from '../components/CoiffureDetail';
 const French1 = () => {
   return (
     <CoiffureDetail
-      className="w-full sm:w-auto h-80 object-cover object-center rounded-sm shadow-lg"
+      
+      className="w-full sm:w-auto h-80 my-24 object-cover object-center rounded-sm shadow-lg"
       image="./fss.jpg"
       title="Fulani Small"
       description="Les Fulani Small sont parfaites pour un look moderne et élégant, tout en étant faciles à entretenir."

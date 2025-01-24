@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Longues = () => {
   return (
-    <div className="flex bg-red-950 justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
+    <div className="flex my-20 bg-red-950 justify-center items-center min-h-screen bg-gradient-to-r from-indigo-600 to-purple-700">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-4xl w-full">
         <div className="flex justify-center mb-6">
           <img
