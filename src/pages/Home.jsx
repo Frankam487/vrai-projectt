@@ -301,9 +301,9 @@ const Home = () => {
       </div>
       <Footer />
       <h2 className="author mx-auto flex items-center justify-center">
-        <span>By</span>
+        <span>👌</span>
         <div className="name">
-          Frank Kamgang
+          Frank Kamgang✌✌
         </div>
       </h2>
     </div>
