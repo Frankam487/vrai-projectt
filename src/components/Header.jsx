@@ -74,7 +74,7 @@ const Header = () => {
             to="/"
             className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:underline px-6 py-2 no-underline"
           >
-            Home
+            Acceuil
           </NavLink>
 
           <NavLink

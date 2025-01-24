@@ -243,7 +243,7 @@ const Reserver = () => {
         <div className="max-w-screen-lg mx-auto text-center">
           <p className="text-xl mb-4">Salon de Coiffure</p>
           <p className="text-md mb-2">📍 Adresse : 6423 Schwyz</p>
-          <p className="text-md mb-2">📞 Téléphone : 0000000000</p>
+          <p className="text-md mb-2">📞 Téléphone : 690461830</p>
           <p className="text-md mb-2">✉️ Email : mfokamkemgne@icloud.com </p>
           <p className="text-sm">
             Heures d'ouverture : 9h - 19h, Lundi au Vendredi
