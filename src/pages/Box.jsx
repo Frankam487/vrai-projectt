@@ -31,7 +31,7 @@ const Box = () => {
   ]);
 
   return (
-    <div className="flex justify-center flex-wrap gap-8 p-8">
+    <div className="flex justify-center my-20 flex-wrap gap-8 p-8">
 
       {data.map(({ id, title, message, route, gradient }) => (
         <div

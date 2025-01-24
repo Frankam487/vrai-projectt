@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import List from "../components/List";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion"; // Importation de motion
+import { motion } from "framer-motion";
 import WhatsAppButton from "../components/WhatsappButton";
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className="home ">
       <Header />
-      <div className="bg-slate-100 home-content">
+      <div  className="bg-slate-100 home-content">
         <motion.h1
           className="text-center text-4xl font-bold mt-8"
           initial={{ opacity: 0, y: -50 }}
@@ -37,7 +37,7 @@ const Home = () => {
         >
           Bienvenue
           <br />
-          chez <span>house-beauty</span>
+          chez <span translate="no">house-beauty</span>
         </motion.h1>
 
         <div className="consignes-container px-22 w-4/5 ">

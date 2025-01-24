@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="bg-transparent text-white shadow-lg fixed top-0 left-0 w-full z-50 backdrop-blur-lg">
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-4xl font-bold tracking-wide">
+        <div translate="no" className="text-4xl font-bold tracking-wide">
           <NavLink
             to="/"
             className="no-underline text-gray-700 font-bold tracking-wide"
