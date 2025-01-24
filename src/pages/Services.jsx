@@ -58,7 +58,7 @@ const Services = () => {
       : servicesList.filter((service) => service.category === filter);
 
   return (
-    <div className="min-h-screen my-24 flex mt-14 flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6">
+    <div className="min-h-screen my-24 flex  flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-teal-700 mb-4 animate__animated animate__fadeIn">
           Nos Services de Coiffure
