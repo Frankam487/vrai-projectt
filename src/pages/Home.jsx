@@ -300,6 +300,12 @@ const Home = () => {
         </div>
       </div>
       <Footer />
+      <h2 className="author mx-auto flex items-center justify-center">
+        <span>By</span>
+        <div className="name">
+          Frank Kamgang
+        </div>
+      </h2>
     </div>
   );
 };

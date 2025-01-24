@@ -6,6 +6,17 @@
     // display: flex;
     // justify-content: center;
   // }
+  .author {
+    .name {
+      color: #2e3030;
+      font-weight: bold;
+      font-size: .8rem;
+font-family: sans-serif;
+    }
+    span {
+color: rgba(10, 23, 41, 0.764);
+    }
+  }
   .logo{
     border-radius: 50%;
     margin: 10px 130px;
