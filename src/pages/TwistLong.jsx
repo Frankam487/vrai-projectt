@@ -2,6 +2,8 @@ import CoiffureDetail from '../components/CoiffureDetail';
 
 const TwistLong = () => {
   return (
+    <div className="my-20">
+
     <CoiffureDetail
       image="./tlarge.jpg"
       title="Twists Large"
@@ -14,6 +16,7 @@ const TwistLong = () => {
       ]}
       route="/reserver"
     />
+    </div>
   );
 };
 
