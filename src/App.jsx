@@ -36,9 +36,11 @@ import Soft2 from './pages/Soft2';
 import Soft3 from './pages/Soft3';
 import WhatsAppButton from './components/WhatsappButton';
 import Services from './pages/Services';
+import Header from './components/Header';
 const App = () => {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

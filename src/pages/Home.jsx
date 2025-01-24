@@ -28,7 +28,6 @@ const Home = () => {
     <div className="home ">
       <Header />
       <div className="bg-slate-100 home-content">
-        
         <motion.h1
           className="text-center text-4xl font-bold mt-8"
           initial={{ opacity: 0, y: -50 }}
@@ -55,7 +54,6 @@ const Home = () => {
             prendre note des informations ci-dessous:
           </motion.p>
 
-          {/* Liste animée au scroll */}
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -289,6 +287,15 @@ const Home = () => {
             </motion.h4>
           </div>
           <List />
+          <button className="btn-services items-center flex justify-center p-2   my-12 mx-auto">
+            <NavLink
+              to="/services"
+              className="text-white no-underline font-serif bg-gray-900 px-6 py-2 cursor-pointer transition"
+            >
+              {" "}
+              Voir Les autres services
+            </NavLink>
+          </button>
           <WhatsAppButton />
         </div>
       </div>

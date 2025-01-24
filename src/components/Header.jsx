@@ -1,33 +1,32 @@
-
-
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-
   };
 
   return (
-    <header className="bg-gradient-to-r from-gray-500 via-teal-500 to-gray-500 text-white shadow-lg fixed top-0 left-0 w-full z-50">
-      <div className="max-w-screen-xl mx-auto px-6 py-2 flex justify-between items-center">
-        <div className="text-3xl font-bold tracking-wide">
-          <span to="/" className="text-2xl font-bold">
-            House
-          </span>
-          Beauty
+    <header className="bg-transparent text-white shadow-lg fixed top-0 left-0 w-full z-50 backdrop-blur-lg">
+      <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="text-4xl font-bold tracking-wide">
+          <NavLink
+            to="/"
+            className="no-underline text-green-600 font-bold tracking-wide"
+          >
+            <span className="text-2xl font-bold">House</span> Beauty
+          </NavLink>
         </div>
 
         <button
-          className="lg:hidden p-2 text-white focus:outline-none"
+          className="lg:hidden p-2 text-black focus:outline-none"
           onClick={toggleMenu}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-7 w-7 transition-all duration-300 ease-in-out transform hover:scale-125"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -41,52 +40,53 @@ const Header = () => {
           </svg>
         </button>
 
-        <nav className="hidden lg:flex  space-x-8">
+        <nav className="hidden lg:flex space-x-8">
           <NavLink
             to="/"
-            className="hover:scale-110
-            no-underline font-bold text-teal-400 transform transition duration-300 ease-in-out
-            font-hover:text-yellow-300 px-4 py-2"
+            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
           >
-            Acceuil
+            Accueil
           </NavLink>
 
           <NavLink
             to="/services"
-            className="hover:scale-110 text-teal-400 font-bold transform no-underline transition duration-300 ease-in-out hover:text-yellow-300 px-4 py-2 "
+            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
           >
             Services
           </NavLink>
+
           <NavLink
             to="/contact"
-            className=" text-teal-400 font-bold hover:scale-110 transform transition duration-300 ease-in-out  no-underline hover:text-yellow-300 px-4 py-2"
+            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
           >
             Contact
           </NavLink>
         </nav>
       </div>
 
+      {/* Menu mobile */}
       <div
-        className={`lg:hidden bg-gray-800 bg-opacity-80 fixed top-0 left-0 w-full h-full transition-all duration-300 ease-in-out ${isMenuOpen ? "block" : "hidden"}`}
+        className={`lg:hidden bg-black bg-opacity-80 fixed top-0 left-0 w-full h-full transition-all duration-300 ease-in-out ${isMenuOpen ? "block" : "hidden"}`}
         onClick={() => setIsMenuOpen(false)}
       >
-        <div className="flex flex-col items-center justify-center space-y-6 mt-24">
+        <div className="flex flex-col items-center bg-gradient-to-t from-gray-900 to-black py-24 justify-center space-y-6">
           <NavLink
             to="/"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:underline px-6 py-2 no-underline"
           >
             Home
           </NavLink>
 
           <NavLink
             to="/services"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:text-yellow-500 hover:underline px-6 py-2 no-underline"
           >
             Services
           </NavLink>
+
           <NavLink
             to="/contact"
-            className="text-white text-lg hover:scale-110 transform transition duration-300 ease-in-out hover:text-yellow-300 px-6 py-2 no-underline"
+            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:text-yellow-500 hover:underline px-6 py-2 no-underline"
           >
             Contact
           </NavLink>
