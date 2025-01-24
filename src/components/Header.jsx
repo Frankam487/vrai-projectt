@@ -16,7 +16,7 @@ const Header = () => {
             to="/"
             className="no-underline text-gray-700 font-bold tracking-wide"
           >
-            <span className="text-2xl font-bold">House</span>Beauty
+            <span className="text-2xl font-bold" translate="no">House</span>Beauty
           </NavLink>
         </div>
 
