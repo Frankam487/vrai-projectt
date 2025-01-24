@@ -22,7 +22,6 @@ const generateDatesForWeek = (currentDate) => {
     }
 
     const dateObj = new Date(startDate);
-    // Période du matin (8h)
     const morningSlot = new Date(
       dateObj.getFullYear(),
       dateObj.getMonth(),
@@ -121,21 +120,21 @@ const Reserver = () => {
     nextArrow: (
       <div className="slick-arrow slick-next">
         <span className="text-teal-600 text-xl p-4 rounded-full bg-white shadow-2xl hover:bg-teal-100 transition-all">
-          ➡️
+
         </span>
       </div>
     ),
     prevArrow: (
       <div className="slick-arrow slick-prev">
         <span className="text-teal-600 text-xl p-4 rounded-full bg-white shadow-2xl hover:bg-teal-100 transition-all">
-          ⬅️
+
         </span>
       </div>
     ),
   };
 
   return (
-    <div className="min-h-screen my-20 flex flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6 md:p-8">
+    <div className="min-h-screen my-20 flex overflow-x-hidden flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6 md:p-8">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-teal-700 mb-4 animate__animated animate__fadeIn animate__delay-1s">
           Réservez votre Rendez-vous au Salon de Coiffure
