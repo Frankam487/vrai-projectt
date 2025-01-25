@@ -302,7 +302,7 @@ const Home = () => {
       <Footer />
       <h2 className="author mx-auto flex items-center justify-center">
         <span>👌</span>
-        <div className="name">Frank Kamgang✌✌ rrrrrrrrrrrrrr</div>
+        <div className="name">Frank Kamgang✌✌</div>
       </h2>
     </div>
   );
