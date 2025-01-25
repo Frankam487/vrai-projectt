@@ -245,6 +245,7 @@ const Reserver = () => {
           <p className="text-md mb-2">📍 Adresse : 6423 Schwyz</p>
           <p className="text-md mb-2">📞 Téléphone : 690461830</p>
           <p className="text-md mb-2">✉️ Email : mfokamkemgne@icloud.com </p>
+          
           <p className="text-sm">
             Heures d'ouverture : 9h - 19h, Lundi au Vendredi
           </p>
