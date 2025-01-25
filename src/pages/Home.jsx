@@ -25,7 +25,7 @@ const Home = () => {
   }, [isDarkMode]);
 
   return (
-    <div className="home ">
+    <div className="home">
       <Header />
       <div className="bg-slate-100 home-content">
         <motion.h1
@@ -41,7 +41,7 @@ const Home = () => {
         </motion.h1>
 
         <div className="consignes-container px-22 w-4/5 ">
-          {/* Description avec animation au scroll */}
+
           <motion.p
             className="font-serif text-[13px] py-20 w-full"
             initial={{ opacity: 0 }}

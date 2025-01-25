@@ -1,8 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import Reservations from "./pages/Reservations";
-// import Service1Details1 from "./pages/Service1Details1";
-// import Reservation from "./components/Reservation";
 import Classiques from "./pages/Classiques";
 import Courtes from "./pages/Courtes";
 import Longues from "./pages/Longues";
