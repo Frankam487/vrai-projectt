@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className="home ">
       <Header />
-      <div  className="bg-slate-100 home-content">
+      <div className="bg-slate-100 home-content">
         <motion.h1
           className="text-center text-4xl font-bold mt-8"
           initial={{ opacity: 0, y: -50 }}
@@ -302,9 +302,7 @@ const Home = () => {
       <Footer />
       <h2 className="author mx-auto flex items-center justify-center">
         <span>👌</span>
-        <div className="name">
-          Frank Kamgang✌✌
-        </div>
+        <div className="name">Frank Kamgang✌✌ rrrrrrrrrrrrrr</div>
       </h2>
     </div>
   );
