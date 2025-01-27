@@ -45,20 +45,19 @@ const servicesList = [
     price: "80 CHF",
     imageUrl: "./courte.jpg",
   },
-  // Ajoutez autant de services que nécessaire...
 ];
 
 const Services = () => {
   const [filter, setFilter] = useState("All");
 
-  
+
   const filteredServices =
     filter === "All"
       ? servicesList
       : servicesList.filter((service) => service.category === filter);
 
   return (
-    <div className="min-h-screen my-24 flex  flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6">
+    <div className="min-h-screen my-24  flex  flex-col items-center bg-gradient-to-r from-teal-50 via-teal-100 to-teal-200 p-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-teal-700 mb-4 animate__animated animate__fadeIn">
           Nos Services de Coiffure
@@ -68,7 +67,6 @@ const Services = () => {
         </p>
       </header>
 
-      {/* Filtre des catégories */}
       <div className="mb-8 flex flex-wrap justify-center gap-4">
         <button
           onClick={() => setFilter("All")}
@@ -96,7 +94,6 @@ const Services = () => {
         </button>
       </div>
 
-      {/* Liste des services */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-screen-xl">
         {filteredServices.map((service) => (
           <div
@@ -115,7 +112,7 @@ const Services = () => {
             <p className="text-xl font-semibold text-teal-700">
               {service.price}
             </p>
-            <button className="mt-4 px-4 py-2 rounded-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 transition-all">
+            <button className="mt-4 mx-auto text-center px-4 py-2 rounded-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 transition-all">
               <NavLink
                 to="/reserver"
                 className="decoration-none mt-4 p-1 rounded-lg no-underline text-white font-semibold hover:bg-teal-700 transition-all w-full"
@@ -127,11 +124,8 @@ const Services = () => {
           </div>
         ))}
       </div>
-
-      {/* Footer */}
       <Footer />
     </div>
   );
 };
-
 export default Services;
